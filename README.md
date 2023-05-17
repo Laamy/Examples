@@ -1,7 +1,7 @@
 # MinecraftUtilityExamples
 
 Just some examples I threw together as a learning resource for whoever needs it
-Feel free to push your own examples onto this repository
+<br>Feel free to push your own examples onto this repository
 
 # EDUCATIONAL
 
