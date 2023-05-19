@@ -9,22 +9,7 @@ No Precompiled Headers
 #include "Util.h"
 #include "Libs/minhook/minhook.h"
 
-const uintptr_t BASE_ADDR = (uintptr_t)GetModuleHandleA("Minecraft.Windows.exe"); // v1.*.*
-
-const uintptr_t KEYMAP_ADDR = BASE_ADDR + 0x1C7B30; // v1.19.81
-
-void* __o__KeyPress; // pointer of the original keypress
-
-void KeyPressDetour(int key, bool held)
-{
-    std::cout << key << " " << held << std::endl;
-
-    Util::CallFunc<void*, int, bool>(
-        __o__KeyPress,
-        key,
-        held
-    );
-}
+#include "Hook/Hooks.h"
 
 void InitClient(HMODULE mod)
 {
@@ -32,10 +17,7 @@ void InitClient(HMODULE mod)
 
     if (MH_Initialize() == MH_OK)
     {
-        if (MH_CreateHook((void*)KEYMAP_ADDR, &KeyPressDetour, &__o__KeyPress) == MH_OK)
-        {
-            MH_EnableHook((void*)KEYMAP_ADDR); // activate the detour
-        }
+        InitializeHooks();
     }
 }
 
