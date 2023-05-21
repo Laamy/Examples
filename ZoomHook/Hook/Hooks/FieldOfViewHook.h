@@ -1,6 +1,6 @@
 #pragma once
 
-const uintptr_t FIELD_HOOK = BASE_ADDR + 0xE69A70; // v1.19.81 (tutorial: https://www.youtube.com/watch?v=IEpvEjLhBcc)
+const uintptr_t FIELD_HOOK = BASE_ADDR + 0xE69CB0; // v1.19.81 (tutorial: https://www.youtube.com/watch?v=IEpvEjLhBcc)
 
 void* __o__FieldHook;
 

@@ -1,6 +1,6 @@
 #pragma once
 
-const uintptr_t KEYMAP_ADDR = BASE_ADDR + 0x1C7B30; // v1.19.81 (tutorial: https://www.youtube.com/watch?v=IEpvEjLhBcc)
+const uintptr_t KEYMAP_ADDR = BASE_ADDR + 0x1C7B20; // v1.19.83 (tutorial: https://www.youtube.com/watch?v=IEpvEjLhBcc)
 
 void* __o__KeyPress; // pointer of the original keypress
 
